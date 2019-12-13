@@ -1,0 +1,17 @@
+<h1>Les articles</h1>
+
+<% @articles.each do |article| %>
+  <h2><%= article.title %></h2>
+  <p><%= article.text %></p>
+
+  <p><%= link_to 'Lire article', article_path(article.id) %></p>
+  <p><%= link_to 'Modifier article', edit_article_path(article.id) %></p>
+  <%= link_to 'supprimer article', article_path(article.id), method: :delete, data: { confirm: 'vous êtes sur ?'} %>
+<% end %>
+
+<br><br>
+<%= link_to 'Créer un article', new_article_path %>
+<br>
+<%= link_to 'Se connecter', new_user_session_path %>
+<%= link_to 'Sinscrire', new_user_registration_path %>
+<%= link_to 'Se deconnecter', destroy_user_session_path, method: :delete %>

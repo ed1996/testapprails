@@ -1,0 +1,23 @@
+<h2>Inscription client</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "shared/devise_errors" %>
+
+  <div class="form-group">
+    <%= f.text_field :fullname, autofocus: true, class: "form-control", placeholder: "Nom complet" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Adresse email" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Créer un mot de passe" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Inscription", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
